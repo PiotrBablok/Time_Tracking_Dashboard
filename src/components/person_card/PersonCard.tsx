@@ -41,8 +41,6 @@ const PersonCard: React.FC = () => {
     async function getActivityData() {
         const test = await fetch('/data.json');
         const res = await test.json();
-
-        console.log(res);
     }
 
     return (
