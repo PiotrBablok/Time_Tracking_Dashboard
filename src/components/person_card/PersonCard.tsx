@@ -48,13 +48,14 @@ const PersonCard: React.FC = () => {
     return (
         <div className='control-panel'>
             <div className='control-panel__person'>
-                <img src={person[0].img} alt="" />
-                <img src={person[0].img} alt="" />
+                {(person[0].img !== '' ? <img src={person[0].img} alt="" /> : '')}
                 <p>Report For</p>
                 <h3>{`${person[0].name} ${person[0].lastName}`}</h3>
             </div>
             <div className='control-panel__panel'>
-
+            <button>Daily</button>
+            <button>Weekly</button>
+            <button>Monthly</button>
             </div>
 
         </div>
