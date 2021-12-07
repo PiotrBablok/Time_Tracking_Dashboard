@@ -2,25 +2,31 @@ import React, { useState, useEffect } from "react";
 
 import './PersonCard.css'
 
-interface PersonInfo {
+import { scopeState } from '../../utilities/ScopeState' // TS type
+
+interface PersonInfoState {
     name: string;
     lastName: string;
     img: string;
 }
 
-const Dummy_Person: PersonInfo[] = [{
+interface PersonCardProps {
+    scopeFn: (newScope: scopeState) => void;
+}
+
+
+const Dummy_Person: PersonInfoState[] = [{
     name: '',
     lastName: '',
     img: '',
 }]
 
-const PersonCard: React.FC = () => {
+const PersonCard: React.FC<PersonCardProps> = (props) => {
 
-    const [person, setPerson] = useState<PersonInfo[]>(Dummy_Person);
+    const [person, setPerson] = useState<PersonInfoState[]>(Dummy_Person);
 
     useEffect(() => {
         getUserData();
-        getActivityData();
     }, [])
 
     async function getUserData() {
@@ -29,7 +35,7 @@ const PersonCard: React.FC = () => {
         });
         const bodyParse = await fetchData.json();
 
-        const person: PersonInfo = {
+        const person: PersonInfoState = {
             name: bodyParse.results[0].name.first,
             lastName: bodyParse.results[0].name.last,
             img: bodyParse.results[0].picture.large,
@@ -38,10 +44,10 @@ const PersonCard: React.FC = () => {
         setPerson([person])
     }
 
-    async function getActivityData() {
-        const test = await fetch('/data.json');
-        const res = await test.json();
+    function liftData(scope: scopeState) {
+        props.scopeFn(scope);
     }
+
 
     return (
         <div className='control-panel'>
@@ -51,11 +57,10 @@ const PersonCard: React.FC = () => {
                 <h3>{`${person[0].name} ${person[0].lastName}`}</h3>
             </div>
             <div className='control-panel__panel'>
-            <button>Daily</button>
-            <button>Weekly</button>
-            <button>Monthly</button>
+                <button onClick={liftData.bind('', 'daily')}>Daily</button>
+                <button onClick={liftData.bind('', 'weekly')}>Weekly</button>
+                <button onClick={liftData.bind('', 'monthly')}>Monthly</button>
             </div>
-
         </div>
     )
 }

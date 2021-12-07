@@ -1,0 +1,101 @@
+.activities {
+    width: 90%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.activities__holder {
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.activities__holder-all {
+    height: auto;
+    border-radius: 15px 15px 20px 20px;
+    padding-top: 3rem;
+    background-repeat: no-repeat;
+    background-size: 80px;
+    background-position: right top;
+}
+
+.activities__holder-data {
+    background-color: hsl(235, 46%, 20%);
+    display: grid;
+    align-items: center;
+    grid-template-columns: 8rem 1fr;
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+    height: 10rem;
+    width: 100%;
+    border-radius: 15px;
+}
+
+.activities__holder-data p {
+    background-color: transparent;
+    color: white;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.activities__holder-data p:nth-child(1) {
+    grid-area: 1/1/2/2;
+    text-align: left;
+    font-weight: 500;
+}
+
+.activities__holder-data p:nth-child(2) {
+    grid-area: 1/2/2/3;
+    text-align: right;
+    font-size: 2rem;
+}
+
+.activities__holder-data p:nth-child(3) {
+    grid-area: 2/1/3/2;
+    text-align: left;
+    font-size: 2rem;
+    font-weight: 300;
+    align-self: flex-start;
+}
+
+.activities__holder-data p:nth-child(4) {
+    grid-area: 2/2/3/3;
+    text-align: center;
+    font-weight: 400;
+    font-size: 1rem;
+    color: hsl(235, 36%, 69%);
+    align-self: flex-start;
+    padding-top: 0.8rem;
+}
+
+.activities__holder-Work {
+    background-color: rgb(255, 139, 100);
+    background-image: url('../../media/icon-work.svg');
+
+}
+
+.activities__holder-Play {
+    background-color: rgb(86, 194, 230);
+    background-image: url('../../media/icon-play.svg');
+}
+
+.activities__holder-Study {
+    background-color: rgb(255, 94, 125);
+    background-image: url('../../media/icon-study.svg');
+}
+
+.activities__holder-Exercise {
+    background-color: rgb(75, 207, 131);
+    background-image: url('../../media/icon-exercise.svg');
+}
+
+.activities__holder-Social {
+    background-color: rgb(114, 53, 209);
+    background-image: url('../../media/icon-social.svg');
+}
+
+.activities__holder-SelfCare {
+    background-color: rgb(241, 199, 91);
+    background-image: url('../../media//icon-self-care.svg');
+}

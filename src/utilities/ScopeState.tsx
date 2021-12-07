@@ -1,0 +1,1 @@
+export type scopeState = 'daily' | 'weekly' | 'monthly';
