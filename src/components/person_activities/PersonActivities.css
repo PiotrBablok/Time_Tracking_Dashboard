@@ -1,14 +1,14 @@
 .activities {
-    width: 90%;
+    width: 100%;
     height: auto;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
     align-items: center;
 }
 
 .activities__holder {
-    width: 100%;
+    width: 90%;
     margin-top: 2rem;
 }
 
@@ -98,4 +98,58 @@
 .activities__holder-SelfCare {
     background-color: rgb(241, 199, 91);
     background-image: url('../../media//icon-self-care.svg');
+}
+
+@media (min-width: 700px) {
+
+    .activities {
+        height: 26rem;
+    }
+
+    .activities__holder {
+        width: 30%;
+        margin: 0;
+    }
+
+    .activities__holder-all {
+        padding-top: 2rem;
+        background-size: 50px;
+    }
+
+    .activities__holder-data {
+        grid-template-columns: 6rem 3.8rem;
+        grid-template-rows: repeat(3, minmax(0, 1fr));
+        height: 10rem;
+    }
+
+    .activities__holder-data p {
+        margin: 0;
+        margin-left: 0.5rem;
+        padding: 0;
+    }
+
+    .activities__holder-data p:nth-child(1) {
+        font-size: 0.8rem;
+        grid-area: 1/1/2/2;
+    }
+
+    .activities__holder-data p:nth-child(2) {
+        grid-area: 1/2/4/3;
+        justify-self: flex-start;
+        align-self: flex-start;
+    }
+
+    .activities__holder-data p:nth-child(3) {
+        grid-area: 2/1/3/2;
+        align-self: center;
+    }
+
+    .activities__holder-data p:nth-child(4) {
+        grid-area: 3/1/4/2;
+        font-size: 0.7rem;
+        width: 5rem;
+        padding: 0;
+        text-align: left;
+        align-self: flex-start;
+    }
 }
