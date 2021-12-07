@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 
+import data from './data.json'
 import { scopeState } from '../../utilities/ScopeState' // TS type
 
 import './PersonActivities.css'
@@ -37,15 +38,14 @@ const PersonActivities: React.FC<PersonActivitiesProps> = (props) => {
 
 
     async function getActivityData() {
-        const data = await fetch('/data.json')
-        const res = await data.json();
-        setActivities(res);
+        setActivities(data);
     }
 
     function timeScope(el: ActivitiesState, target: scopeState) {
         const interval = (target === 'daily' ? 'Day' : (target === 'weekly' ? 'Week' : 'Month'))
+        console.log(el);
         return (
-            <div className='activities__holder' id={el.title}>
+            <div className='activities__holder' key={el.title}>
                 <div className={`activities__holder-${el.title} activities__holder-all`} id={el.title}>
                     <div className='activities__holder-data'>
                         <p>{el.title}</p>
