@@ -12,6 +12,7 @@
     grid-template-rows: repeat(2, minmax(0, 1fr));
     background-color: hsl(246, 80%, 60%);
     border-radius: 20px 20px 20px 20px;
+    height: 8rem;
 }
 
 .control-panel__person img {
@@ -21,7 +22,7 @@
     border: 3px solid white;
     border-radius: 50%;
     background-color: transparent;
-    height: 70%;
+    height: 5rem !important;
 }
 
 .control-panel__person p {

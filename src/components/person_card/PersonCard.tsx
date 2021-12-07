@@ -52,7 +52,7 @@ const PersonCard: React.FC<PersonCardProps> = (props) => {
     return (
         <div className='control-panel'>
             <div className='control-panel__person'>
-                {(person[0].img !== '' ? <img src={person[0].img} alt="" /> : '')}
+                {(person[0].img !== '' ? <img src={person[0].img} alt="" /> : <p></p>)}
                 <p>Report For</p>
                 <h3>{`${person[0].name} ${person[0].lastName}`}</h3>
             </div>
