@@ -1,15 +1,15 @@
-.control-panel{
-    width: 90%;
+.control-panel {
     background-color: hsl(235, 46%, 20%);
     margin-top: 5rem;
     border-radius: 20px;
+    width: 90%;
 }
 
 .control-panel__person {
     color: white;
     display: grid;
     grid-template-columns: 8rem 1fr;
-    grid-template-rows: repeat(2,minmax(0,1fr));
+    grid-template-rows: repeat(2, minmax(0, 1fr));
     background-color: hsl(246, 80%, 60%);
     border-radius: 20px 20px 20px 20px;
 }
@@ -51,6 +51,34 @@
     width: 100%;
 }
 
+.control-panel__person img {
+    justify-self: center;
+    align-self: center;
+    grid-area: 1/1/3/2;
+    border: 3px solid white;
+    border-radius: 50%;
+    background-color: transparent;
+    height: 70%;
+}
+
+.control-panel__person p {
+    justify-self: flex-start;
+    align-self: flex-end;
+    grid-area: 1/2/2/3;
+    background-color: transparent;
+    padding-bottom: 0.5rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.514);
+}
+
+.control-panel__person h3 {
+    padding-top: 0.5rem;
+    grid-area: 2/2/3/3;
+    background-color: transparent;
+    font-weight: 300;
+    font-size: 1.2rem;
+}
+
 .control-panel__panel button {
     color: hsl(235, 45%, 61%);
     border: none;
@@ -62,4 +90,53 @@
 .control-panel__panel button:hover {
     transition-timing-function: ease-out;
     color: white;
+}
+
+@media (min-width: 700px) {
+    .control-panel {
+        width: 35%;
+        margin: 0 0 0 0.5rem;
+        height: 25rem;
+    }
+
+    .control-panel__person {
+        grid-template-columns: 1fr;
+        grid-template-rows: 8rem 2rem 1fr;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        height: 80%;
+    }
+
+    .control-panel__person img {
+        grid-area: 1/1/2/2;
+        justify-self: flex-start;
+    }
+
+    .control-panel__person p {
+        grid-area: 2/1/3/2;
+        font-size: 0.8rem;
+
+    }
+
+    .control-panel__person h3 {
+        grid-area: 3/1/4/2;
+        font-size: 1.8rem;
+    }
+
+    .control-panel__panel {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 2rem;
+        height: 5rem;
+    }
+
+    .control-panel__panel button {
+        font-size: 0.8rem;
+    }
+}
+
+@media (min-width: 850px) {
+    .control-panel {
+        width: 15rem;
+    }
 }
