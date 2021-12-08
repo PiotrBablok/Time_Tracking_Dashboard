@@ -91,6 +91,7 @@
 .control-panel__panel button:hover {
     transition-timing-function: ease-out;
     color: white;
+    cursor: pointer;
 }
 
 @media (min-width: 700px) {
