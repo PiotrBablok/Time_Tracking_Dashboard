@@ -43,7 +43,6 @@ const PersonActivities: React.FC<PersonActivitiesProps> = (props) => {
 
     function timeScope(el: ActivitiesState, target: scopeState) {
         const interval = (target === 'daily' ? 'Day' : (target === 'weekly' ? 'Week' : 'Month'))
-        console.log(el);
         return (
             <div className='activities__holder' key={el.title}>
                 <div className={`activities__holder-${el.title} activities__holder-all`} id={el.title}>
