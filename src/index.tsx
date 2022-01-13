@@ -9,3 +9,5 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
+
+/* Coś sprawdzam tylko :P */
